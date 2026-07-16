@@ -23,7 +23,8 @@ type ConnectionTableToolbarProps = {
 const ToolbarActions = styled('div')(() => ({
   display: 'flex',
   borderRadius: '0.5rem 0.5rem 0 0',
-  width: '100%',
+  flex: 1,
+  minWidth: 0,
   justifyContent: 'flex-end',
 }));
 
@@ -41,7 +42,11 @@ export const ConnectionTableToolbar = ({
 }: ConnectionTableToolbarProps) => {
   return (
     <ToolWrapper style={{ marginBottom: '5px', marginTop: '-30px' }}>
-      <CreateButton>
+      <CreateButton
+        sx={{
+          display: { xs: isSearchExpanded ? 'none' : 'flex', sm: 'flex' },
+        }}
+      >
         <ConnectionWizardLauncher />
       </CreateButton>
       <ToolbarActions>

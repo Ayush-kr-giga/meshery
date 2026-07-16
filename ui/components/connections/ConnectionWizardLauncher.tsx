@@ -6,9 +6,12 @@ import AddIconCircleBorder from '@/assets/icons/AddIconCircleBorder';
 import { useConnectionWizardModal } from '@/utils/context/ConnectionWizardContextProvider';
 
 const LaunchButton = styled(Button)({
-  width: '100%',
+  width: 'fit-content',
   borderRadius: 5,
   padding: '8px',
+  maxWidth: '100%',
+  minWidth: 0,
+  overflow: 'hidden',
 });
 
 const canOpenConnectionWizard = () =>
@@ -32,9 +35,11 @@ const ConnectionWizardLauncher = () => {
     >
       <AddIconCircleBorder style={{ width: '20px', height: '20px' }} />
       <Typography
+        noWrap
         style={{
           paddingLeft: '4px',
-          width: 'max-content',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
           marginRight: '4px',
         }}
       >

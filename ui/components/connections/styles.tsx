@@ -21,7 +21,9 @@ export const CreateButton = styled(Grid)({
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  whiteSpace: 'nowrap',
+  minWidth: 0,
+  flexShrink: 1,
+  maxWidth: '100%',
 });
 
 export const InnerTableContainer = styled(TableContainer)(({ theme }) => ({
